@@ -5,7 +5,9 @@
                 
                 <div class="large-12columns" id="contenido" align="middle" >
                      
-                      <?php echo form_open('usuarios/create') ?>
+                      <?php 
+                      $this->load->helper('form');
+                       echo form_open('usuarios/create') ?>
 
                             <div class="row">
                               <div class="small-2 large-2 columns">

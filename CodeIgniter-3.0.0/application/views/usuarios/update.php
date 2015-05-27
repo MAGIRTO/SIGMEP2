@@ -1,8 +1,10 @@
+<div class="large-12 columns" id="contenido" align="middle" >
+                      
+                        <h1 align="center"> EDICION DE USUARIOS</h1>
 
-
-<div class="large-12columns" id="contenido" align="middle" >
-                     
-                      <?php echo form_open('usuarios/create') ?>
+                            <?php 
+                            $this->load->helper('form');
+                            echo form_open('usuarios/update') ?>
 
                             <div class="row">
                               <div class="small-2 large-2 columns">
@@ -12,10 +14,7 @@
                               </div>
                               <div class="large-10 small-10 columns">                      
                                   <input name="nombreUsuario" type="text" 
-
-                                  <?php   echo "value=".$usuarios_item['nombre'].'</h2>';   ?>
-
-
+                                    value="<?php echo $usuarios_item['nombre'] ?>"
                                    required="" />
                               </div>
                             </div>  
@@ -26,7 +25,9 @@
                                   </span>
                                 </div>
                                 <div class="large-10 small-10 columns">                      
-                                    <input name="email" type="email" placeholder="Correo Electronico" required="" />
+                                    <input name="email" type="email" 
+                                     value="<?php echo $usuarios_item['email'] ?>"
+                                     required="" />
                                 </div>
                             </div>    
                             <div class="row">
@@ -36,7 +37,9 @@
                                   </span>
                                 </div>
                                 <div class="large-10 small-10 columns">                      
-                                  <input name="password" type="password" placeholder="Password" required="" />
+                                  <input name="password" type="password" 
+                                   value="<?php echo $usuarios_item['password'] ?>"
+                                   required="" />
                                 </div>
                             </div>
                             <div class="row">
@@ -46,8 +49,12 @@
                                   </span>
                                 </div>
                                 <div class="large-10 small-10 columns">                      
-                                    <select name="tipo_Usuario" required=""  >
-                                              <option value="">Tipo De Usuario</option>
+                                    <select name="tipo_Usuario"
+
+                                    required=""  >
+                                              <option  value="<?php echo $usuarios_item['tipo_Usuario'] ?>" >
+
+                                               <?php   echo $usuarios_item['tipo_Usuario'];   ?></option>
                                               <option value="Jefe De Area">Jefe De Area</option>
                                               <option value="Secretaría General">Secretaría General</option>
                                               <option value="Supervisor">Interventor</option>
@@ -55,18 +62,23 @@
                                     </select>
                                 </div>
                             </div>
+                            
                             <div class="row" id="contenido" align="middle">
-                            <div class="large-4 columns" id="contenido2" align="middle">
-                              <input type="submit" class="button expand round" name="registrar" value="REGISTRAR" />                         
+                                <div class="large-6 small-6 columns" id="contenido2">
+                                  <input type="submit" class="button expand round" name="registrar" value="ACTUALIZAR" />                         
+                                </div>
+                                
+                                <div class="large-6 small-6 columns" id="contenido2" >
+                                  <input type="reset" data-reveal-id="registrarUsuario" onclick="window.close();"  class="button expand round" 
+                                  name="cancelar" value="CANCELAR" />                         
+                                </div>
                             </div>
-                            <div class="large-4 columns" id="contenido2" align="middle">
-                              <input type="reset" class="button expand round" name="cancelar" value="REINICIAR" />                         
+                            <div class="large-10 small-10 columns">                      
+                                  <input name="slug" type="text" 
+                                   value="<?php echo $usuarios_item['slug'] ?>"
+                                   required="" />
                             </div>
-                            <div class="large-4 columns" id="contenido2" align="middle">
-                              <input type="reset" data-reveal-id="registrarUsuario" class="button expand round" name="cancelar" value="CANCELAR" />                         
-                            </div>
-                            </div>
-                    </form>
+</form>
 </div>
 
 
